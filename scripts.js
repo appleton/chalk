@@ -2,9 +2,7 @@
 
 // TODO:
 //   1. Hide avatars if not a grove server
-//   2. Can we avoid basic auth for grove API?
-//   3. Fix L72
-//   4. Retry blank avatars on new line added
+//   2. Fix L72
 
 window.onload = function() {
   // Load jQuery
