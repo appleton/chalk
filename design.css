@@ -20,7 +20,7 @@ body {
 	overflow-y: visible;
 	background-color: #EDEDEF;
 	font-family: "Lucida Grande";
-	font-weight: 300;
+	font-weight: normal;
 }
 
 body div#body_home {
