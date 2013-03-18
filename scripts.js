@@ -1,9 +1,10 @@
 /* Defined in: "Textual.app -> Contents -> Resources -> JavaScript -> API -> core.js" */
 
 // TODO:
-//   1. Don't die if not a grove server
+//   1. Hide avatars if not a grove server
 //   2. Can we avoid basic auth for grove API?
 //   3. Fix L72
+//   4. Retry blank avatars on new line added
 
 window.onload = function() {
   // Load jQuery
@@ -46,11 +47,8 @@ window.onload = function() {
     var $line = $('#line' + lineNumber),
         user = users[$line.attr('nick')];
 
-    if (user) {
-      insertAvatar($line, user);
-    } else {
-      getUsers().then(function() { insertAvatar($line, user); });
-    }
+    if (user) { return insertAvatars(); }
+    getUsers().then(insertAvatars);
   };
 
   // -----------------------
@@ -104,9 +102,14 @@ window.onload = function() {
   function insertAvatar(el, user) {
     if (!user) { return; }
     var img = document.createElement('img'),
-        src = user.userpics.size_28;
+        src = user.userpics.size_28,
+        $img = $(el).find('.avatar');
+
+    // Don't try to re-replace avatars that are already correct
+    if($img.attr('src') === src) { return; }
+
     img.className = 'avatar';
-    img.onload = function() { $(el).find('.avatar').attr('src', src); };
+    img.onload = function() { $img.attr('src', src); };
     img.src = src;
   }
 
