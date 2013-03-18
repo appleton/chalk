@@ -1,0 +1,39 @@
+<div type="{{lineType}}"
+		highlight="{{highlightAttributeRepresentation}}"
+		class="line {{lineClassAttributeRepresentation}} {{nicknameType}}"
+		id="line{{lineNumber}}"
+		nick="{{nickname}}">
+
+{{#nickname}}
+	<img src="http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y"
+			 class="avatar" width="28" height"28" />
+{{/nickname}}
+
+{{#isRemoteMessage}}
+	<p>
+{{/isRemoteMessage}}
+
+{{^isRemoteMessage}}
+	<p type="{{nicknameType}}">
+{{/isRemoteMessage}}
+
+		<span class="time">{{formattedTimestamp}} </span>
+		<span class="message" type="{{lineType}}">
+			<span class="sender"
+				ondblclick="Textual.nicknameDoubleClicked()"
+				oncontextmenu="Textual.openStandardNicknameContextualMenu()"
+				type="{{nicknameType}}"
+				nick="{{nickname}}"
+				{{#nicknameColorHashingEnabled}}
+					colornumber="{{nicknameColorNumber}}"
+				{{/nicknameColorHashingEnabled}}>{{formattedNickname}}</span>
+					{{{formattedMessage}}}
+
+					{{#inlineMediaAvailable}}
+						{{#inlineMediaArray}}
+							<a href="{{{anchorLink}}}" onclick="return Textual.hideInlineImage(this)"><img src="{{{imageURL}}}" class="inlineimage" style="max-width: {{preferredMaximumWidth}}px;" title="Hide image by shift clicking." /></a>
+						{{/inlineMediaArray}}
+					{{/inlineMediaAvailable}}
+		</span>
+	</p>
+</div>
