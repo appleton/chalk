@@ -1,4 +1,5 @@
-A theme for [Textual](http://www.codeux.com/textual/)
+A theme for [Textual](http://www.codeux.com/textual/) which shows Gorve.io
+avatars if available.
 
 Install:
 ```
