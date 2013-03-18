@@ -99,16 +99,12 @@ window.onload = function() {
 
   function insertAvatar(el, user) {
     if (!user) { return; }
-    var img = document.createElement('img'),
-        src = user.userpics.size_28,
+    var src = user.userpics.size_28,
         $img = $(el).find('.avatar');
 
-    // Don't try to re-replace avatars that are already correct
-    if($img.attr('src') === src) { return; }
-
-    img.className = 'avatar';
-    img.onload = function() { $img.attr('src', src); };
-    img.src = src;
+    // Don't re-replace avatars that are already correct
+    if ($img.attr('src') === src) { return; }
+    $img.attr('src', src);
   }
 
   // -----------------------
