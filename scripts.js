@@ -38,6 +38,9 @@ window.onload = function() {
   Txt.viewInitiated = function(viewType, serverHash, channelHash, channelID) {
     channelName = channelID;
     initUsers();
+    // Insert avatars that are in localStorage
+    insertAvatars();
+    // Start the API requests and then do another round of avatar insertion
     bootstrap().then(insertAvatars);
   };
 
