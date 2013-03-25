@@ -81,6 +81,7 @@ window.onload = function() {
 
   // Get all users in this channel and store details for later
   function getUsers() {
+    if (!channelID) { throw('No channelID'); }
     return $.get(api + 'channels/' + channelID + '/users').then(function(data) {
       data.forEach(registerUser);
     });
