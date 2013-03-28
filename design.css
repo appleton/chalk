@@ -385,7 +385,10 @@ body .inline_nickname[colornumber='27'],
 body .inline_nickname[colornumber='28'],
 body .inline_nickname[colornumber='29'],
 body .inline_nickname[colornumber='30'] {
-	color: #AAAAAA;
+	padding: 1px 4px;
+	background: #EEE;
+	border: 1px solid #DDD;
+	border-radius: 3px;
 }
 /* mIRC Color Codes */
 
