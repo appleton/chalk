@@ -1,4 +1,4 @@
-A theme for [Textual](http://www.codeux.com/textual/) which shows Gorve.io
+A theme for [Textual](http://www.codeux.com/textual/) which shows Grove.io
 avatars if available.
 
 ![Screen grab](https://raw.github.com/mrappleton/chalk/master/screen.png)
