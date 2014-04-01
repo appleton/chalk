@@ -5,5 +5,5 @@ avatars if available.
 
 Install:
 ```
-$ git clone git@github.com:mrappleton/chalk.git ~/Library/Containers/com.codeux.irc.textual/Data/Library/Application Support/Textual IRC/Styles/Chalk
+$ git clone git@github.com:mrappleton/chalk.git "~/Library/Containers/com.codeux.irc.textual/Data/Library/Application Support/Textual IRC/Styles/Chalk"
 ```
